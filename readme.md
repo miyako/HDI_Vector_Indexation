@@ -112,9 +112,19 @@ prefix (`検索クエリ: `), creates the vector index and writes `build.report`
 
 ## Downloading Large Files
 
-The files in `Data/` are stored with Git LFS. By default, GitHub's **Download ZIP** contains small LFS pointer files instead of the actual data. Clone the repository with GitHub Desktop or Git to download the data; if the cloned files are still pointers, run `git lfs pull` in the cloned repository. Make sure Git LFS is installed.
+The repository ships without `Data/` (the prebuilt data file is ≈ 1.9 GB, too
+large for a Git clone). Download **Data.zip** from the
+[latest release](https://github.com/miyako/HDI_Vector_Indexation/releases/latest)
+and unzip it into the project folder, so the project contains
+`Data/data.4DD`:
 
-If you need a ZIP containing the data, the repository owner can enable **Include Git LFS objects in archives** under the repository's **Settings > General > Archives** on GitHub. Downloading the archive uses Git LFS bandwidth. The journal file is excluded from the repository and is not included in either download method.
+```sh
+unzip HDI_Vector_Indexation_Data.zip -d HDI_Vector_Indexation
+```
+
+The archive contains the 300,000-text corpus with both vector fields, the
+vector index and the bilingual prompts — everything the demo needs; no model
+download is required to run it.
 
 ## Screenshots
 
