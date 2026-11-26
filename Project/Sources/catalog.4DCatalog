@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
-<base name="HDI_Vector_Indexation" uuid="140903C5A44A441BA2C1C3300299B4AA" collation_locale="fr">
+<base name="HDI_Vector_Indexation" uuid="140903C5A44A441BA2C1C3300299B4AA" collation_locale="en">
 	<schema name="DEFAULT_SCHEMA"/>
 	<table name="INFO" uuid="EB00C636116141A59FA5380A4DD8BCCF" id="1">
 		<field name="ID" uuid="65C71743A20E40AA810B27FC6713572F" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
@@ -11,11 +11,15 @@
 	</table>
 	<table name="Prompts" uuid="96E9738881C648BA8BF1CA490DEE6767" id="2">
 		<field name="ID" uuid="9A7AC2D753B84CEEACA88FC1CCA4C1BC" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
-		<field name="Prompt" uuid="BA85D7897CCE448183F98CE96B0253A7" type="10" limiting_length="255" id="2"/>
-		<field name="Vector" uuid="E33AF73A48E74CEB84A007F2BE7D7686" type="21" blob_switch_size="2147483647" id="3">
+		<field name="PromptEN" uuid="BA85D7897CCE448183F98CE96B0253A7" type="10" limiting_length="255" id="2"/>
+		<field name="VectorEN" uuid="E33AF73A48E74CEB84A007F2BE7D7686" type="21" blob_switch_size="2147483647" id="3">
 			<field_extra class_id="4D.Vector"/>
 		</field>
 		<field name="EmbeddingModel" uuid="01D9156FE9FF4F7B9A67F7352E77699F" type="10" limiting_length="255" id="4"/>
+		<field name="PromptJA" uuid="F0020005000000000000000000000000" type="10" limiting_length="255" id="5"/>
+		<field name="VectorJA" uuid="F0020006000000000000000000000000" type="21" blob_switch_size="2147483647" id="6">
+			<field_extra class_id="4D.Vector"/>
+		</field>
 		<primary_key field_name="ID" field_uuid="9A7AC2D753B84CEEACA88FC1CCA4C1BC"/>
 	</table>
 	<table name="Data" uuid="36BC078368CE4C77AF6E14F2942DFB2B" id="3">
@@ -31,7 +35,7 @@
 		<primary_key field_name="ID" field_uuid="CF65BACD9ED648BEA33AFB64AA853ADE"/>
 	</table>
 	<index kind="regular" uuid="7BAD1A89178C4841A824781F3FBD752B" type="7">
-		<field_ref uuid="BA85D7897CCE448183F98CE96B0253A7" name="Prompt">
+		<field_ref uuid="BA85D7897CCE448183F98CE96B0253A7" name="PromptEN">
 			<table_ref uuid="96E9738881C648BA8BF1CA490DEE6767" name="Prompts"/>
 		</field_ref>
 	</index>
@@ -56,6 +60,6 @@
 		</field_ref>
 	</index>
 	<base_extra>
-		<journal_file journal_file_enabled="true"/>
+		<journal_file journal_file_enabled="false"/>
 	</base_extra>
 </base>

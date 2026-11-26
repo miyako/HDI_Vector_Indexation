@@ -1,0 +1,33 @@
+/* HDI_Embeddings — macOS styles.
+   Button heights per form theme: 27px under Liquid Glass (the rounded
+   variant starts at 27px), 23px under mac-classic. Height is defined on
+   both the class-only and the type+class selector: the compound selector
+   alone does not always match at runtime. */
+
+.Buttons_13 {
+	font-size: 13px;
+}
+
+.description {
+	font-size: 16px;
+}
+
+@media (form-theme: liquid-glass) {
+	.Buttons_13 {
+		height: 27px;
+	}
+
+	button.Buttons_13 {
+		height: 27px;
+	}
+}
+
+@media (form-theme: mac-classic) {
+	.Buttons_13 {
+		height: 23px;
+	}
+
+	button.Buttons_13 {
+		height: 23px;
+	}
+}

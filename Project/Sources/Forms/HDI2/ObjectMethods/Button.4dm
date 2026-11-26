@@ -1,16 +1,15 @@
+//%attributes = {}
+// Button: search with the vector index (IndexedVector) and time the query.
+// Threshold 0.85 was calibrated on the built corpus: below it the ruri-v3
+// cosine noise floor (unrelated texts ≈ 0.80) floods the result, and the
+// vector index itself degrades toward full-scan times.
 
 Form.indexedResult:=[]
-
 Form.indexedTimer:=0
 
-If (Form.trace)
-	TRACE
-End if 
+var $param : Object
+$param:={vector: Form.currentVector; metric: "cosine"; threshold: 0.85}
 
-var $param:={vector: Form.currentQuestion.Vector; metric: "cosine"; threshold: 0.7}
-
-var $timer:=Current time()
-
+var $t0 : Real:=Milliseconds
 Form.indexedResult:=ds.Data.query("IndexedVector>=:1 order by IndexedVector desc"; $param)
-
-Form.indexedTimer:=Current time()-$timer
+Form.indexedTimer:=Round(Milliseconds-$t0; 0)

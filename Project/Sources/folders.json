@@ -1,15 +1,13 @@
 {
-	"Classes par défaut": {},
-	"Dossier par défaut": {
+	"Default Folder": {
 		"groups": [
-			"Classes par défaut",
-			"Formulaires par défaut",
-			"Méthodes projet par défaut",
-			"Tables par défaut"
+			"Default Forms",
+			"Default Project Methods",
+			"Default Tables"
 		]
 	},
-	"Formulaires par défaut": {},
-	"Méthodes projet par défaut": {},
-	"Tables par défaut": {},
+	"Default Forms": {},
+	"Default Project Methods": {},
+	"Default Tables": {},
 	"trash": {}
 }

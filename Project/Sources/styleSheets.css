@@ -1,0 +1,51 @@
+/* HDI_Embeddings — cross-platform styles.
+   Dark/light rules live here; platform control heights live in
+   styleSheets_mac.css (liquid-glass / mac-classic) and
+   styleSheets_windows.css (fluent-ui / win-classic). */
+
+/* Typography */
+.Buttons_13 {
+	font-size: 13px;
+}
+
+.description {
+	font-size: 16px;
+}
+
+/* Mode Light */
+@media (prefers-color-scheme: light) {
+	.mutedText {
+		stroke: #696969;
+	}
+
+	.warningText {
+		stroke: #C00000;
+	}
+
+	.linkText {
+		stroke: #1E90FF;
+	}
+
+	.splashBand {
+		fill: #C0C0C0;
+	}
+}
+
+/* Mode Dark */
+@media (prefers-color-scheme: dark) {
+	.mutedText {
+		stroke: #A0A0A0;
+	}
+
+	.warningText {
+		stroke: #FF8080;
+	}
+
+	.linkText {
+		stroke: #5CB8FF;
+	}
+
+	.splashBand {
+		fill: #3A3A3A;
+	}
+}

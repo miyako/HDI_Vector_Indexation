@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file datatype="plaintext" original="menu" source-language="en" target-language="ja">
+		<body>
+			<trans-unit id="MenuDemo" resname="MenuDemo">
+				<source>Demo</source>
+				<target>デモ</target>
+			</trans-unit>
+			<trans-unit id="MenuItemDemo" resname="MenuItemDemo">
+				<source>Demo</source>
+				<target>デモを開始</target>
+			</trans-unit>
+			<trans-unit id="MenuItemQuit" resname="MenuItemQuit">
+				<source>Quit</source>
+				<target>終了</target>
+			</trans-unit>
+			<trans-unit id="MenuEdit" resname="MenuEdit">
+				<source>Edit</source>
+				<target>編集</target>
+			</trans-unit>
+			<trans-unit id="MenuItemUndo" resname="MenuItemUndo">
+				<source>Undo</source>
+				<target>取り消す</target>
+			</trans-unit>
+			<trans-unit id="MenuItemCut" resname="MenuItemCut">
+				<source>Cut</source>
+				<target>カット</target>
+			</trans-unit>
+			<trans-unit id="MenuItemCopy" resname="MenuItemCopy">
+				<source>Copy</source>
+				<target>コピー</target>
+			</trans-unit>
+			<trans-unit id="MenuItemPaste" resname="MenuItemPaste">
+				<source>Paste</source>
+				<target>ペースト</target>
+			</trans-unit>
+			<trans-unit id="MenuItemClear" resname="MenuItemClear">
+				<source>Clear</source>
+				<target>消去</target>
+			</trans-unit>
+			<trans-unit id="MenuItemSelectAll" resname="MenuItemSelectAll">
+				<source>Select All</source>
+				<target>すべてを選択</target>
+			</trans-unit>
+			<trans-unit id="MenuItemShowClipboard" resname="MenuItemShowClipboard">
+				<source>Show Clipboard</source>
+				<target>クリップボードを表示</target>
+			</trans-unit>
+			<trans-unit id="MenuMode" resname="MenuMode">
+				<source>Mode</source>
+				<target>モード</target>
+			</trans-unit>
+			<trans-unit id="MenuItemDesign" resname="MenuItemDesign">
+				<source>Return to Design mode</source>
+				<target>デザインモードに戻る</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

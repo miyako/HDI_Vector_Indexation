@@ -1,58 +1,38 @@
 //%attributes = {}
-var $ps; $win : Integer
-var $options : Object
-var $cr : Text
+// Method: 00_Start
+// Description: Opens the demo window. Called with no parameter by the
+// On Startup database method and the Demo menu item; re-enters itself in
+// the application process through CALL WORKER (see the 4dstartup skill).
 
-Case of 
-	: (Count parameters=0)
-		
-		// This is for DOT NOTATION only. Do NOT change 16R5 !!! See below for more info
-		//Modify $option variable (below) for minimal version
-		If (Application version<"1800")  // 16R5
-			ALERT("Sorry, this \"How do I\" (HDI) example must be used with a newer version of 4D (v17 R4 and above)"; "Quit")
-			QUIT 4D
-		Else 
-			$ps:=New process(Current method name; 0; Current method name; 0)
-		End if 
-		
-	Else 
-		
-		$cr:=Char(Carriage return)
-		
-		If (Shift down)  //  for debug purpose only
-			$win:=Open form window("HDI"; Plain form window; Horizontally centered; Vertically centered)
-		Else 
-			$win:=Open form window("HDI"; Pop up form window; Horizontally centered; Vertically centered)
-		End if 
-		
-		$options:=New object
-		
-		$options.title:="use indexed 4D.Vector fields?"
-		
-		$options.blog:="blog.4d.com"
-		$options.info:="4D feature"  //ex : "4D View Pro feature"
-		
-		$options.minimumVersion:="2140"  // 1660 means 16R6   1601 means 16.1 (do not use !)
-		
-		//$options.license:=4D Write license// IF ANY NEEDED
-		
-		// THE BACKGROUND PICTURE IS IN THE RESOURCES : Resources/Images/HDIabout.png
-		// the picture size is 724 * 364
-		// these 3 commented lines can be removed when done !
-		
-		DIALOG("HDI"; $options)
-		CLOSE WINDOW
-		
-		
-		If ($options.quit=True)
-			QUIT 4D
-		Else 
-			
-			$win:=Open form window("HDI2"; Plain form window; Horizontally centered; Vertically centered)
-			DIALOG("HDI2")
-			CLOSE WINDOW
-			
-		End if 
-		
-End case 
+#DECLARE($params : Object)
 
+var $window : Integer
+var $title : Text
+$title:=Localized string("HDI2_WindowTitle")
+
+If (Count parameters=0)
+	
+	// already open? bring it to the front instead of opening a duplicate
+	ARRAY LONGINT($windows; 0)
+	WINDOW LIST($windows)
+	var $i : Integer
+	For ($i; 1; Size of array($windows))
+		$window:=$windows{$i}
+		If (Window process($window)=1) && (Get window title($window)=$title)
+			var $left; $top; $right; $bottom : Integer
+			GET WINDOW RECT($left; $top; $right; $bottom; $window)
+			CALL FORM($window; Formula(SET WINDOW RECT($left; $top; $right; $bottom; $window)))
+			return 
+		End if 
+	End for 
+	
+	CALL WORKER(1; Current method name; {})
+	
+Else 
+	
+	SET MENU BAR(1)
+	$window:=Open form window("HDI2"; Plain form window; Horizontally centered; Vertically centered)
+	SET WINDOW TITLE($title; $window)
+	DIALOG("HDI2"; $params; *)
+	
+End if 

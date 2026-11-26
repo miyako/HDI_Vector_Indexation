@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file datatype="plaintext" original="messages" source-language="en" target-language="ja">
+		<body>
+			<trans-unit id="HDI2_WindowTitle" resname="HDI2_WindowTitle">
+				<source>Vector Index Demo</source>
+				<target>ベクトルインデックスデモ</target>
+			</trans-unit>
+			<trans-unit id="Info_Tab1" resname="Info_Tab1">
+				<source>About</source>
+				<target>概要</target>
+			</trans-unit>
+			<trans-unit id="Info_Tab2" resname="Info_Tab2">
+				<source>Demo</source>
+				<target>デモ</target>
+			</trans-unit>
+			<trans-unit id="HDI2_DemoHint" resname="HDI2_DemoHint">
+				<source>サンプルプロンプトを選択し、ベクトルインデックスありとなしで同じ検索を実行して時間を比較します。</source>
+				<target>サンプルプロンプトを選択し、ベクトルインデックスありとなしで同じ検索を実行して時間を比較します。</target>
+			</trans-unit>
+			<trans-unit id="HDI2_LabelPrompt" resname="HDI2_LabelPrompt">
+				<source>Select a prompt:</source>
+				<target>プロンプトを選択:</target>
+			</trans-unit>
+			<trans-unit id="HDI2_ButtonIndexed" resname="HDI2_ButtonIndexed">
+				<source>Search with index</source>
+				<target>インデックスで検索</target>
+			</trans-unit>
+			<trans-unit id="HDI2_ButtonNonIndexed" resname="HDI2_ButtonNonIndexed">
+				<source>Search without index</source>
+				<target>インデックスなしで検索</target>
+			</trans-unit>
+			<trans-unit id="HDI2_LabelTime" resname="HDI2_LabelTime">
+				<source>Time (ms):</source>
+				<target>時間 (ミリ秒):</target>
+			</trans-unit>
+			<trans-unit id="HDI2_ColumnId" resname="HDI2_ColumnId">
+				<source>Id</source>
+				<target>ID</target>
+			</trans-unit>
+			<trans-unit id="HDI2_ColumnText" resname="HDI2_ColumnText">
+				<source>Text</source>
+				<target>テキスト</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

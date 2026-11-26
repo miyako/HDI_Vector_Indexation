@@ -1,17 +1,13 @@
+//%attributes = {}
+// Button1: search without the vector index (NonIndexedVector) and time the
+// query. Same data, same query shape - only the indexed attribute differs.
 
 Form.nonIndexedResult:=[]
-
 Form.nonIndexedTimer:=0
 
-If (Form.trace)
-	TRACE
-End if 
+var $param : Object
+$param:={vector: Form.currentVector; metric: "cosine"; threshold: 0.85}
 
-
-var $param:={vector: Form.currentQuestion.Vector; metric: "cosine"; threshold: 0.7}
-
-var $timer:=Current time()
-
+var $t0 : Real:=Milliseconds
 Form.nonIndexedResult:=ds.Data.query("NonIndexedVector>=:1 order by NonIndexedVector desc"; $param)
-
-Form.nonIndexedTimer:=Current time()-$timer
+Form.nonIndexedTimer:=Round(Milliseconds-$t0; 0)
